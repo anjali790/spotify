@@ -1,0 +1,38 @@
+<p>This are List Of All User Data</p>
+
+<!-- <p>home works!</p>
+<div *ngFor="let x of AdminData">
+    <h3> <pre>
+    UserId : {{x.uid}}
+    UserName : {{x.uname}}
+    MobileNumber : {{x.mnumber}}
+    Email : {{x.email}}
+    Password: {{x.password}}
+    PlayListName : {{x.pname}}
+    SongId : {{x.sid}}
+    SongUrl : {{x.songurl}}
+    </pre>
+    </h3>
+</div> -->
+
+<div class="main-div">
+    <mat-card class="card" *ngFor="let data of AdminData">
+        <mat-card-header>
+            <mat-card-title class="title">Name:{{data.uname}}</mat-card-title>
+            <mat-card-subtitle class="sub1">Id: {{data.uid}}</mat-card-subtitle> 
+            <mat-card-subtitle class="sub1">PhoneNo:{{data.mnumber}}</mat-card-subtitle> 
+            <mat-card-subtitle class="sub1">Email:{{data.email}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Password:{{data.password}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Playlist:{{data.pname}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Firstsong:{{data.firstsong}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Secondsong:{{data.secondsong}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Thirdsong:{{data.thirdsong}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Fourthsong:{{data.fourthsong}}</mat-card-subtitle>
+            <mat-card-subtitle class="sub1">Fivthsongsong:{{data.fivthsong}}</mat-card-subtitle>
+          
+
+        </mat-card-header>
+        <button mat-button><mat-icon>border_color</mat-icon></button>
+        <button mat-button><mat-icon>delete_foreve</mat-icon></button>
+    </mat-card>
+    </div>  

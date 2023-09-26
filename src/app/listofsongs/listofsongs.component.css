@@ -1,0 +1,22 @@
+
+
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+    display: flex;
+    float: right;
+  }
+  
+  .example {
+    display: table-cell;
+    max-width: 600px;
+    display: flex;
+   margin-left: 550px;
+  }
+  .main-div{
+    padding-top: 40px;
+ padding-bottom: 30px;
+ 
+ 
+     }

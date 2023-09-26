@@ -1,0 +1,260 @@
+<!-- 
+<h2> Spotify  Registraction Form 
+    <form (submit)="fun1()">
+        <div>User Id <input type="text" name="uid" [(ngModel)]="obj.uid"></div>
+        <div>User Name<input type="text" name="uname" [(ngModel)]="obj.uname"></div>
+        <div>USer MobileNo <input type="text" name="mnumber" [(ngModel)]="obj.mnumber"></div>
+        <div>USer Email <input type="text" name="email" [(ngModel)]="obj.email"></div>
+        <div>USer Password<input type="text" name="password" [(ngModel)]="obj.password"></div>
+        <div>PlayList-Name<input type="text" name="pname" [(ngModel)]="obj.pname"></div>
+        <div>SondId<input type="text" name="sid" [(ngModel)]="obj.sid"></div>
+        <div>SongUrl<input type="text" name="songurl" [(ngModel)]="obj.songurl"></div>
+        <div> <input type="submit" value="submit"> </div>
+    
+    </form>
+</h2> -->
+
+
+
+<!-- <h3>
+    <pre>
+    StudentId       : {{studentObj.sid}}
+    Student Name    : {{studentObj.sname}}
+    Student Email   : {{studentObj.email}}
+    Student Password: {{studentObj.password}}
+    Student Marks   : {{studentObj.smarks}}
+</pre>
+
+
+</h3> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <form [formGroup]="sportifyform" (ngSubmit)="fun1()">
+    <div>Enter UserId <input type="text" formControlName="uid" ></div><br>
+    <div *ngIf="sportifyform.controls['uid'].hasError('required')">
+        <div style="color: red;">*User Id is Required</div>
+    </div>
+    
+    <div *ngIf="sportifyform.controls['uid'].hasError('minlength')">
+        <div style="color: red;">*Atleast 1 charateres Required</div>
+    </div>
+    <div *ngIf="sportifyform.controls['uid'].hasError('maxlength')">
+        <div style="color: red;">*Can't Exceed 5 charaters </div>
+    </div>
+
+    <div>Enter UserName <input type="text" formControlName="uname" ></div><br>
+    <div *ngIf="sportifyform.controls['uname'].hasError('required')">
+        <div style="color: red;">*Name is Required</div>
+    </div>
+    
+    <div *ngIf="sportifyform.controls['uname'].hasError('minlength')">
+        <div style="color: red;">*Atleast 6 charateres Required</div>
+    </div>
+
+    <div *ngIf="sportifyform.controls['uname'].hasError('maxlength')">
+        <div style="color: red;">*Can't Exceed 15 charaters </div>
+    </div>
+    <div *ngIf="sportifyform.controls['uname'].hasError('pattern')">
+        <div style="color: red;">*First letter start from [A-z] /Remaning [a-z]</div>
+    </div>
+
+        <div>Enter MobileNumber <input type="text" formControlName="mnumber" ></div><br>
+        <div *ngIf="sportifyform.controls['mnumber'].hasError('required')">
+            <div style="color: red;">*MobileNumber is Required</div>
+        </div>
+        
+        <div *ngIf="sportifyform.controls['mnumber'].hasError('minlength')">
+            <div style="color: red;">*Atleast 10 charateres Required</div>
+        </div>
+        <div *ngIf="sportifyform.controls['mnumber'].hasError('maxlength')">
+            <div style="color: red;">*Can't Exceed 12 charaters </div>
+        </div>
+        <div *ngIf="sportifyform.controls['mnumber'].hasError('pattern')">
+            <div style="color: red;">*Start with 7/8/9</div>
+        </div>
+
+    
+    <div>Enter Email <input type="text" formControlName="email" ></div><br>
+
+    <div *ngIf="sportifyform.controls['email'].hasError('required')">
+        <div style="color: red;">*Email is Required</div>
+    </div>
+    
+    <div *ngIf="sportifyform.controls['email'].hasError('minlength')">
+        <div style="color: red;">*Atleast 10 charateres Required</div>
+    </div>
+    <div *ngIf="sportifyform.controls['email'].hasError('maxlength')">
+           <div style="color: red;">*Can't Exceed 25 charaters </div>
+   </div>
+   <div *ngIf="sportifyform.controls['email'].hasError('pattern')">
+    <div style="color: red;">*Start with [Aa-Zz]/+/. + @gmail.com </div>
+</div>
+
+   <div>Enter Password <input type="text" formControlName="password" ><br><br></div>
+   <div *ngIf="sportifyform.controls['password'].hasError('required')">
+       <div style="color: red;">*password is Required</div>
+   </div>
+   <div *ngIf="sportifyform.controls['password'].hasError('minlength')">
+       <div style="color: red;">*Atleast 6 charateres Required</div>
+   </div>
+   <div *ngIf="sportifyform.controls['password'].hasError('maxlength')">
+       <div style="color: red;">*Can't Exceed 10 charaters </div>
+   </div>
+   <div *ngIf="sportifyform.controls['password'].hasError('pattern')">
+    <div style="color: red;">*Start with and should have atleast one from each [Aa-Zz]/[0-9]/[#?!@$%^&*-]</div>
+</div>
+
+   <div>Enter PlayList <input type="text" formControlName="pname" ><br><br></div>
+   <div *ngIf="sportifyform.controls['pname'].hasError('required')">
+       <div style="color: red;">*playList Name is Required</div>
+   </div>
+   <div *ngIf="sportifyform.controls['pname'].hasError('minlength')">
+       <div style="color: red;">*Atleast 6 charateres Required</div>
+   </div>
+   <div *ngIf="sportifyform.controls['pname'].hasError('maxlength')">
+       <div style="color: red;">*Can't Exceed 10 charaters </div>
+   </div>
+  
+  
+   <div class="example-container">
+    
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Select Firstsong</mat-label>
+        <mat-select  formControlName="firstsong">
+          <mat-option value="assets/Hunson Abadeer.mp3">1.HUnson</mat-option>
+          <mat-option value="assets/01aAfterTheBall.mp3">2.aAfterTheBall</mat-option>
+          <mat-option value="assets/Naruto - I Said Im Naruto.mp3">3.Naruto-I-Said-Im-Naruto</mat-option>
+          <mat-option value="assets/Naruto - Need To Be Strong.mp3">4.Naruto-Need To Be Strong</mat-option>
+          <mat-option value="assets/Naruto - Sadness and Sorrow.mp3">5.NarutoSadnessandSorrow</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Naruto and Hinatas love.mp3">6.NarutoShippuden-Naruto-Hinatas-love</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Opening 1 - Full.mp3">7.NarutoShippuden-Opening</mat-option>
+          <mat-option value="/assets/One Piece - Believe.mp3">8.OnePiece-Believe</mat-option>
+          <mat-option value="assets/One Piece - Opening 4.mp3">9.One Piece-Opening 4</mat-option>
+          <mat-option value="assets/One Piece - Opening 15.mp3">10.OnePiece-Opening 15</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div class="example-container">
+    
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Select Secondsong</mat-label>
+        <mat-select  formControlName="secondsong">
+          <mat-option value="assets/Hunson Abadeer.mp3">1.HUnson</mat-option>
+          <mat-option value="assets/01aAfterTheBall.mp3">2.aAfterTheBall</mat-option>
+          <mat-option value="assets/Naruto - I Said Im Naruto.mp3">3.Naruto-I-Said-Im-Naruto</mat-option>
+          <mat-option value="assets/Naruto - Need To Be Strong.mp3">4.Naruto-Need To Be Strong</mat-option>
+          <mat-option value="assets/Naruto - Sadness and Sorrow.mp3">5.NarutoSadnessandSorrow</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Naruto and Hinatas love.mp3">6.NarutoShippuden-Naruto-Hinatas-love</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Opening 1 - Full.mp3">7.NarutoShippuden-Opening</mat-option>
+          <mat-option value="/assets/One Piece - Believe.mp3">8.OnePiece-Believe</mat-option>
+          <mat-option value="assets/One Piece - Opening 4.mp3">9.One Piece-Opening 4</mat-option>
+          <mat-option value="assets/One Piece - Opening 15.mp3">10.OnePiece-Opening 15</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+
+<br>
+
+
+<div class="example-container">
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Select ThirdSong</mat-label>
+        <mat-select  formControlName="thirdsong">
+          <mat-option value="assets/Hunson Abadeer.mp3">1.HUnson</mat-option>
+          <mat-option value="assets/01aAfterTheBall.mp3">2.aAfterTheBall</mat-option>
+          <mat-option value="assets/Naruto - I Said Im Naruto.mp3">3.Naruto-I-Said-Im-Naruto</mat-option>
+          <mat-option value="assets/Naruto - Need To Be Strong.mp3">4.Naruto-Need To Be Strong</mat-option>
+          <mat-option value="assets/Naruto - Sadness and Sorrow.mp3">5.NarutoSadnessandSorrow</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Naruto and Hinatas love.mp3">6.NarutoShippuden-Naruto-Hinatas-love</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Opening 1 - Full.mp3">7.NarutoShippuden-Opening</mat-option>
+          <mat-option value="/assets/One Piece - Believe.mp3">8.OnePiece-Believe</mat-option>
+          <mat-option value="assets/One Piece - Opening 4.mp3">9.One Piece-Opening 4</mat-option>
+          <mat-option value="assets/One Piece - Opening 15.mp3">10.OnePiece-Opening 15</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div class="example-container">
+    
+    <mat-form-field color="accent" appearance="fill">
+        <mat-label>Select fouthSong</mat-label>
+        <mat-select  formControlName="fourthsong">
+          <mat-option value="assets/Hunson Abadeer.mp3">1.HUnson</mat-option>
+          <mat-option value="assets/01aAfterTheBall.mp3">2.aAfterTheBall</mat-option>
+          <mat-option value="assets/Naruto - I Said Im Naruto.mp3">3.Naruto-I-Said-Im-Naruto</mat-option>
+          <mat-option value="assets/Naruto - Need To Be Strong.mp3">4.Naruto-Need To Be Strong</mat-option>
+          <mat-option value="assets/Naruto - Sadness and Sorrow.mp3">5.NarutoSadnessandSorrow</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Naruto and Hinatas love.mp3">6.NarutoShippuden-Naruto-Hinatas-love</mat-option>
+          <mat-option value="assets/Naruto Shippuden - Opening 1 - Full.mp3">7.NarutoShippuden-Opening</mat-option>
+          <mat-option value="/assets/One Piece - Believe.mp3">8.OnePiece-Believe</mat-option>
+          <mat-option value="assets/One Piece - Opening 4.mp3">9.One Piece-Opening 4</mat-option>
+          <mat-option value="assets/One Piece - Opening 15.mp3">10.OnePiece-Opening 15</mat-option>
+        </mat-select>
+        <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+      </mat-form-field>
+    </div>
+
+<br>
+
+<div class="example-container">
+    
+<mat-form-field color="accent" appearance="fill">
+    <mat-label>Select FivthSong</mat-label>
+    <mat-select  formControlName="fivthsong">
+      <mat-option value="assets/Hunson Abadeer.mp3">1.HUnson</mat-option>
+      <mat-option value="assets/01aAfterTheBall.mp3">2.aAfterTheBall</mat-option>
+      <mat-option value="assets/Naruto - I Said Im Naruto.mp3">3.Naruto-I-Said-Im-Naruto</mat-option>
+      <mat-option value="assets/Naruto - Need To Be Strong.mp3">4.Naruto-Need To Be Strong</mat-option>
+      <mat-option value="assets/Naruto - Sadness and Sorrow.mp3">5.NarutoSadnessandSorrow</mat-option>
+      <mat-option value="assets/Naruto Shippuden - Naruto and Hinatas love.mp3">6.NarutoShippuden-Naruto-Hinatas-love</mat-option>
+      <mat-option value="assets/Naruto Shippuden - Opening 1 - Full.mp3">7.NarutoShippuden-Opening</mat-option>
+      <mat-option value="/assets/One Piece - Believe.mp3">8.OnePiece-Believe</mat-option>
+      <mat-option value="assets/One Piece - Opening 4.mp3">9.One Piece-Opening 4</mat-option>
+      <mat-option value="assets/One Piece - Opening 15.mp3">10.OnePiece-Opening 15</mat-option>
+    </mat-select>
+    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+  </mat-form-field>
+</div>
+
+<br>
+
+    <input type="submit" value="Submit">
+   
+ 
+
+  <div>
+    userId: {{sportifyform.value.uid}} <br>
+    Name: {{sportifyform.value.uname}} <br>
+    MobileNo: {{sportifyform.value.mnumber}} <br>
+    Email: {{sportifyform.value.email}} <br>
+    Password: {{sportifyform.value.password}} <br>
+    PlayList-Name: {{sportifyform.value.pname}} <br>
+  
+   </div>
+
+
+
+ 
+
+</form> 

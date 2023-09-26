@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    color: green;
+}
+
+.card{
+    margin: 10px;
+    max-width: 300px;
+}
+
+.title{
+    color: aqua;
+} 
+
+.main-div{display:flex; justify-content: space-around;}
+
+.sub1{text-align: center;}
+
+
+
+

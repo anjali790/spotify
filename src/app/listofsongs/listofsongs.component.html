@@ -1,0 +1,19 @@
+<div class="example-button-row">
+    
+    <button mat-raised-button color="accent" routerLink="/welcome">LOGOUT</button>
+  </div>
+
+
+
+    <div class="main-div" *ngFor="let songs of Listofsongs">
+      {{songs.name}} <br> <br>
+      <audio controls>
+        <source src="{{songs.url}}"  type="audio/mpeg"  >
+      </audio>
+</div>
+
+  <!-- <div class="example">
+    
+    <button type="button" (click)="log()" mat-raised-button color="accent" >Add To Playlist</button>
+  </div> -->
+   
